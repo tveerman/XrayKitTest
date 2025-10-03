@@ -18,7 +18,6 @@ let package = Package(
     ),
     .binaryTarget(
         name: "LibXrayGo",
-        path: "Framework/LibXrayGo.xcframework"
 	url: "https://github.com/tveerman/XrayKitTest/releases/download/1.0.7/LibXrayGo.xcframework.zip",
 	checksum: "529da3eca1542270e65282807eb0bbe0edf50f42980fe4b3844d6daa8a34196b"
     )
