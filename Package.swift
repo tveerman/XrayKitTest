@@ -8,18 +8,19 @@ let package = Package(
   products: [
     .library(
         name: "XrayKit",
-        targets: ["XrayCore"]
+        targets: ["XrayKit"]
     )
   ],
   targets: [
     .target(
-        name: "XrayCore",
-        dependencies: ["XrayCoreLib"]
+        name: "XrayKit",
+        dependencies: ["LibXrayGo"]
     ),
     .binaryTarget(
-        name: "XrayCoreLib",
-	url: "https://github.com/tveerman/XrayKitTest/releases/download/1.0.6/XrayCore.xcframework.zip",
-	checksum: "701c45d57237fe8d0aa366975a75fa6de7b319c690e6daeab60f8f4697da1486"
+        name: "LibXrayGo",
+        path: "Framework/LibXrayGo.xcframework"
+	url: "https://github.com/tveerman/XrayKitTest/releases/download/1.0.7/LibXrayGo.xcframework.zip",
+	checksum: "529da3eca1542270e65282807eb0bbe0edf50f42980fe4b3844d6daa8a34196b"
     )
   ]
 )
