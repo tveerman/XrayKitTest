@@ -29,15 +29,18 @@ jobs:
       - name: Setup Gomobile
         run: |
           git clone https://go.googlesource.com/mobile /tmp/mobile
-          cd /tmp/mobile
+          pushd /tmp/mobile
           git apply ${{ github.workspace }}/patches/gomobile.patch
           go build -o gomobile ./cmd/gomobile
           chmod +x gomobile
+          popd
           export PATH=/tmp/mobile/:$PATH
           echo "PATH=$PATH" >> $GITHUB_ENV
 
       - name: Build xcframework
         run: |
+            pwd
+            ls
             gomobile init
             gomobile bind -target ios,iossimulator,macos,maccatalyst,appletvos,appletvsimulator,xros,xrsimulator -iosversion=16 -tvosversion=17 -x -o LibXrayGo.xcframework
 
